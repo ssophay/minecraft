@@ -1,0 +1,213 @@
+---- Minecraft Crash Report ----
+// My bad.
+
+Time: 2/11/20 9:49 PM
+Description: Watching Server
+
+java.lang.Error
+	at bhi.a(SourceFile:195)
+	at bhl.a(SourceFile:105)
+	at bhi.c(SourceFile:190)
+	at bhi.e_(SourceFile:412)
+	at cso.a(SourceFile:259)
+	at cso.a(SourceFile:207)
+	at aii.a(SourceFile:817)
+	at aii.e(SourceFile:755)
+	at aii.a(SourceFile:525)
+	at air.e(SourceFile:1846)
+	at air.k(SourceFile:2296)
+	at ais.k(SourceFile:486)
+	at aig.k(SourceFile:140)
+	at aqs.k(SourceFile:46)
+	at ark.k(SourceFile:132)
+	at air.h(SourceFile:2111)
+	at ais.h(SourceFile:293)
+	at vg.a(SourceFile:580)
+	at vg$$Lambda$2408/934237672.accept(Unknown Source)
+	at bhi.a(SourceFile:676)
+	at vg.a(SourceFile:383)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:827)
+	at ug.b(SourceFile:343)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:764)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:632)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at bhi.a(SourceFile:195)
+	at bhl.a(SourceFile:105)
+	at bhi.c(SourceFile:190)
+	at bhi.e_(SourceFile:412)
+	at cso.a(SourceFile:259)
+	at cso.a(SourceFile:207)
+	at aii.a(SourceFile:817)
+	at aii.e(SourceFile:755)
+	at aii.a(SourceFile:525)
+	at air.e(SourceFile:1846)
+	at air.k(SourceFile:2296)
+	at ais.k(SourceFile:486)
+	at aig.k(SourceFile:140)
+	at aqs.k(SourceFile:46)
+	at ark.k(SourceFile:132)
+	at air.h(SourceFile:2111)
+	at ais.h(SourceFile:293)
+	at vg.a(SourceFile:580)
+	at vg$$Lambda$2408/934237672.accept(Unknown Source)
+	at bhi.a(SourceFile:676)
+	at vg.a(SourceFile:383)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:827)
+	at ug.b(SourceFile:343)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:764)
+
+-- Thread Dump --
+Details:
+	Threads: "pool-1-thread-1" Id=8 RUNNABLE
+
+
+"Server Shutdown Thread" Id=15 RUNNABLE
+	at java.lang.Thread.join(Thread.java:1243)
+	-  locked java.lang.Thread@35163065
+	at java.lang.Thread.join(Thread.java:1326)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:595)
+	at net.minecraft.server.MinecraftServer$2.run(SourceFile:933)
+
+
+"Thread-0" Id=10 RUNNABLE
+	at java.util.logging.LogManager$LoggerContext.getLoggerNames(LogManager.java:846)
+	-  locked java.util.logging.LogManager$LoggerContext@3bd1c8b7
+	at java.util.logging.LogManager.reset(LogManager.java:1327)
+	at java.util.logging.LogManager$Cleaner.run(LogManager.java:239)
+
+
+"SIGTERM handler" Id=24 BLOCKED on java.lang.Class@3fee5b15 owned by "SIGHUP handler" Id=21
+	at java.lang.Shutdown.exit(Shutdown.java:212)
+	-  blocked on java.lang.Class@3fee5b15
+	at java.lang.Terminator$1.handle(Terminator.java:52)
+	at sun.misc.Signal$1.run(Signal.java:212)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"SIGTERM handler" Id=23 BLOCKED on java.lang.Class@3fee5b15 owned by "SIGHUP handler" Id=21
+	at java.lang.Shutdown.exit(Shutdown.java:212)
+	-  blocked on java.lang.Class@3fee5b15
+	at java.lang.Terminator$1.handle(Terminator.java:52)
+	at sun.misc.Signal$1.run(Signal.java:212)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"SIGHUP handler" Id=22 BLOCKED on java.lang.Class@3fee5b15 owned by "SIGHUP handler" Id=21
+	at java.lang.Shutdown.exit(Shutdown.java:212)
+	-  blocked on java.lang.Class@3fee5b15
+	at java.lang.Terminator$1.handle(Terminator.java:52)
+	at sun.misc.Signal$1.run(Signal.java:212)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"SIGHUP handler" Id=21 WAITING on java.util.logging.LogManager$Cleaner@6302bbb1
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.logging.LogManager$Cleaner@6302bbb1
+	at java.lang.Thread.join(Thread.java:1252)
+	at java.lang.Thread.join(Thread.java:1326)
+	at java.lang.ApplicationShutdownHooks.runHooks(ApplicationShutdownHooks.java:107)
+	at java.lang.ApplicationShutdownHooks$1.run(ApplicationShutdownHooks.java:46)
+	at java.lang.Shutdown.runHooks(Shutdown.java:123)
+	at java.lang.Shutdown.sequence(Shutdown.java:167)
+	at java.lang.Shutdown.exit(Shutdown.java:212)
+	-  locked java.lang.Class@3fee5b15
+	...
+
+
+"Server Watchdog" Id=20 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at uj.run(SourceFile:45)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Netty Epoll Server IO #0" Id=19 RUNNABLE (in native)
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:114)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:239)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:256)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"ObjectCleanerThread" Id=18 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@7aecc28c
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@7aecc28c
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at io.netty.util.internal.ObjectCleaner$1.run(ObjectCleaner.java:54)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"DestroyJavaVM" Id=16 RUNNABLE
+
+
+"Server thread" Id=13 RUNNABLE
+	at bhi.a(SourceFile:195)
+	at bhl.a(SourceFile:105)
+	at bhi.c(SourceFile:190)
+	at bhi.e_(SourceFile:412)
+	at cso.a(SourceFile:259)
+	at cso.a(SourceFile:207)
+	at aii.a(SourceFile:817)
+	at aii.e(SourceFile:755)
+	...
+
+
+"Server Infinisleeper" Id=14 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at ug$1.run(SourceFile:93)
+
+
+"Snooper Timer" Id=12 WAITING on java.util.TaskQueue@7efd50ac
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@7efd50ac
+	at java.lang.Object.wait(Object.java:502)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@4b5cbbb4
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@4b5cbbb4
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@6a77739
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@6a77739
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at uj.run(SourceFile:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.14.2
+	Operating System: Linux (amd64) version 4.4.0-170-generic
+	Java Version: 1.8.0_241, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 1301098584 bytes (1240 MB) / 1556938752 bytes (1484 MB) up to 1556938752 bytes (1484 MB)
+	JVM Flags: 2 total; -Xms1536M -Xmx1536M
+	Player Count: 0 / 5; []
+	Data Packs: vanilla
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)

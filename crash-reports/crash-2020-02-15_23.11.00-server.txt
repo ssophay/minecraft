@@ -1,0 +1,221 @@
+---- Minecraft Crash Report ----
+// Sorry :(
+
+Time: 2/15/20 11:11 PM
+Description: Watching Server
+
+java.lang.Error
+	at java.util.Spliterators.spliterator(Spliterators.java:178)
+	at java.util.Arrays.spliterator(Arrays.java:4872)
+	at java.util.Arrays.stream(Arrays.java:5023)
+	at java.util.Arrays.stream(Arrays.java:5004)
+	at java.util.stream.Stream.of(Stream.java:1000)
+	at aii.a(SourceFile:748)
+	at aii$$Lambda$2392/1119258441.apply(Unknown Source)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:267)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.lambda$initPartialTraversalState$0(StreamSpliterators.java:294)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator$$Lambda$1929/160895205.getAsBoolean(Unknown Source)
+	at java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.fillBuffer(StreamSpliterators.java:206)
+	at java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.doAdvance(StreamSpliterators.java:161)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.tryAdvance(StreamSpliterators.java:300)
+	at java.util.stream.Streams$ConcatSpliterator.tryAdvance(Streams.java:728)
+	at zu$1.tryAdvance(SourceFile:31)
+	at java.util.Spliterator.forEachRemaining(Spliterator.java:326)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at cso.a(SourceFile:277)
+	at cso.a(SourceFile:207)
+	at aii.a(SourceFile:810)
+	at aii.e(SourceFile:755)
+	at aii.a(SourceFile:525)
+	at air.e(SourceFile:1961)
+	at air.k(SourceFile:2296)
+	at ais.k(SourceFile:486)
+	at aig.k(SourceFile:140)
+	at aqs.k(SourceFile:46)
+	at aqu.k(SourceFile:80)
+	at air.h(SourceFile:2111)
+	at ais.h(SourceFile:293)
+	at vg.a(SourceFile:580)
+	at vg$$Lambda$2373/663727450.accept(Unknown Source)
+	at bhi.a(SourceFile:676)
+	at vg.a(SourceFile:383)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:827)
+	at ug.b(SourceFile:343)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:764)
+	at net.minecraft.server.MinecraftServer.run(SourceFile:632)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.util.Spliterators.spliterator(Spliterators.java:178)
+	at java.util.Arrays.spliterator(Arrays.java:4872)
+	at java.util.Arrays.stream(Arrays.java:5023)
+	at java.util.Arrays.stream(Arrays.java:5004)
+	at java.util.stream.Stream.of(Stream.java:1000)
+	at aii.a(SourceFile:748)
+	at aii$$Lambda$2392/1119258441.apply(Unknown Source)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:267)
+	at java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:175)
+	at java.util.ArrayList$ArrayListSpliterator.tryAdvance(ArrayList.java:1359)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.lambda$initPartialTraversalState$0(StreamSpliterators.java:294)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator$$Lambda$1929/160895205.getAsBoolean(Unknown Source)
+	at java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.fillBuffer(StreamSpliterators.java:206)
+	at java.util.stream.StreamSpliterators$AbstractWrappingSpliterator.doAdvance(StreamSpliterators.java:161)
+	at java.util.stream.StreamSpliterators$WrappingSpliterator.tryAdvance(StreamSpliterators.java:300)
+	at java.util.stream.Streams$ConcatSpliterator.tryAdvance(Streams.java:728)
+	at zu$1.tryAdvance(SourceFile:31)
+	at java.util.Spliterator.forEachRemaining(Spliterator.java:326)
+	at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+	at cso.a(SourceFile:277)
+	at cso.a(SourceFile:207)
+	at aii.a(SourceFile:810)
+	at aii.e(SourceFile:755)
+	at aii.a(SourceFile:525)
+	at air.e(SourceFile:1961)
+	at air.k(SourceFile:2296)
+	at ais.k(SourceFile:486)
+	at aig.k(SourceFile:140)
+	at aqs.k(SourceFile:46)
+	at aqu.k(SourceFile:80)
+	at air.h(SourceFile:2111)
+	at ais.h(SourceFile:293)
+	at vg.a(SourceFile:580)
+	at vg$$Lambda$2373/663727450.accept(Unknown Source)
+	at bhi.a(SourceFile:676)
+	at vg.a(SourceFile:383)
+	at net.minecraft.server.MinecraftServer.b(SourceFile:827)
+	at ug.b(SourceFile:343)
+	at net.minecraft.server.MinecraftServer.a(SourceFile:764)
+
+-- Thread Dump --
+Details:
+	Threads: "Server-Worker-146" Id=166 TIMED_WAITING on java.util.concurrent.ForkJoinPool@7f33fa88
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.ForkJoinPool@7f33fa88
+	at java.util.concurrent.ForkJoinPool.awaitWork(ForkJoinPool.java:1824)
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1693)
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
+
+
+"Netty Epoll Server IO #1" Id=21 RUNNABLE
+	at io.netty.channel.epoll.Native.epollWait0(Native Method)
+	at io.netty.channel.epoll.Native.epollWait(Native.java:114)
+	at io.netty.channel.epoll.EpollEventLoop.epollWait(EpollEventLoop.java:239)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:256)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:884)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Server Watchdog" Id=20 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(ThreadImpl.java:454)
+	at uj.run(SourceFile:45)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Netty Epoll Server IO #0" Id=19 RUNNABLE
+	at vy.a(SourceFile:706)
+	at oj.a(SourceFile:126)
+	at oj$c.a(SourceFile:88)
+	at ja.a(SourceFile:159)
+	at ja.a(SourceFile:150)
+	at ja.channelRead0(SourceFile:54)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:362)
+	...
+
+
+"ObjectCleanerThread" Id=18 TIMED_WAITING on java.lang.ref.ReferenceQueue$Lock@71f40b1e
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@71f40b1e
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at io.netty.util.internal.ObjectCleaner$1.run(ObjectCleaner.java:54)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+"Server console handler" Id=17 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(FileInputStream.java:255)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	-  locked java.io.BufferedInputStream@75cb91f8
+	at sun.nio.cs.StreamDecoder.readBytes(StreamDecoder.java:284)
+	at sun.nio.cs.StreamDecoder.implRead(StreamDecoder.java:326)
+	at sun.nio.cs.StreamDecoder.read(StreamDecoder.java:178)
+	-  locked java.io.InputStreamReader@30c90125
+	at java.io.InputStreamReader.read(InputStreamReader.java:184)
+	...
+
+
+"DestroyJavaVM" Id=16 RUNNABLE
+
+
+"Server thread" Id=13 RUNNABLE
+	at java.util.Spliterators.spliterator(Spliterators.java:178)
+	at java.util.Arrays.spliterator(Arrays.java:4872)
+	at java.util.Arrays.stream(Arrays.java:5023)
+	at java.util.Arrays.stream(Arrays.java:5004)
+	at java.util.stream.Stream.of(Stream.java:1000)
+	at aii.a(SourceFile:748)
+	at aii$$Lambda$2392/1119258441.apply(Unknown Source)
+	at java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:267)
+	...
+
+
+"Server Infinisleeper" Id=14 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at ug$1.run(SourceFile:93)
+
+
+"Snooper Timer" Id=12 WAITING on java.util.TaskQueue@50ce4a0e
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@50ce4a0e
+	at java.lang.Object.wait(Object.java:502)
+	at java.util.TimerThread.mainLoop(Timer.java:526)
+	at java.util.TimerThread.run(Timer.java:505)
+
+
+"Signal Dispatcher" Id=4 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@13317f2
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@13317f2
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:144)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:165)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:216)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@28de027d
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@28de027d
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+
+
+Stacktrace:
+	at uj.run(SourceFile:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.14.2
+	Operating System: Linux (amd64) version 4.4.0-170-generic
+	Java Version: 1.8.0_241, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 814177344 bytes (776 MB) / 1556938752 bytes (1484 MB) up to 1556938752 bytes (1484 MB)
+	JVM Flags: 2 total; -Xms1536M -Xmx1536M
+	Player Count: 2 / 5; [vh['sophay'/24640, l='pig farm', x=6.39, y=65.00, z=384.61], vh['姜瑶'/35034, l='pig farm', x=17.29, y=63.00, z=466.59]]
+	Data Packs: vanilla
+	Is Modded: Unknown (can't tell)
+	Type: Dedicated Server (map_server.txt)
